@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#f8f9fa,#e9ecef);
+    padding: 40px;
+}
+
+.container{
+    width: 450px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align: center;
+    color: #333;
+}
+
+label{
+    font-weight: bold;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: darkgreen;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Checkout</h1>
+
+<label>Customer Name</label> <input type="text" id="name" placeholder="Enter your name">
+
+<label>Mobile Number</label> <input type="text" id="mobile" placeholder="Enter mobile number">
+
+<label>Delivery Address</label>
+
+<textarea id="address" rows="4" placeholder="Enter address"></textarea>
+<label><b>Select Payment Method:</b></label><br><br>
+
+<select id="paymentMethod">
+    <option>Cash on Delivery</option>
+    <option>UPI</option>
+    <option>Credit/Debit Card</option>
+</select>
+
+<br><br>
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+</div>
+
+<script>
+
+function placeOrder()
+{
+    let name =
+    document.getElementById("name").value;
+
+    let mobile =
+    document.getElementById("mobile").value;
+
+    let address =
+    document.getElementById("address").value;
+
+    if(name === "" ||
+       mobile === "" ||
+       address === "")
+    {
+        alert("Please fill all details");
+        return;
+    }
+    let paymentMethod =
+document.getElementById("paymentMethod").value;
+
+    let customer = {
+    name: name,
+    mobile: mobile,
+    address: address,
+    paymentMethod: paymentMethod
+};
+
+    localStorage.setItem(
+        "customer",
+        JSON.stringify(customer)
+    );
+
+    window.location =
+    "order.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                *{
+                    background-color: blanchedalmond;
+                }
+                .products
+                {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap:30px;
+                    justify-content: flex-start;
+                    align-items:flex-start;
+                }
+                .product-card
+{
+    width:250px;
+    padding:20px;
+    border:2px solid black;
+    border-radius:10px;
+    text-align:center;
+    transition: all 0.4s ease;
+}
+
+.product-card:hover
+{
+    transform: translateY(-20px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+}
+
+.product-card img
+{
+    width:250px;
+    height:300px;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img
+{
+    transform: scale(1.05);
+}
+                .button
+                {
+                    background-color: chartreuse;
+                    display: inline-block;
+                    color:black;
+                    padding: 10px 10px;
+                    text-decoration: none;
+                    border: 5px;
+                }
+                .btn
+                {
+                    display: inline-block;
+                    background-color: blue;
+                    color: black;
+                    padding:10px 20px;
+                    text-decoration: none;
+                    border-radius:5px;
+                    top:20px;
+                    right:20px;
+                    position:absolute;
+                }
+                .quantity{
+    margin-top:10px;
+}
+
+.quantity button{
+    width:30px;
+    height:30px;
+    font-size:18px;
+    background-color:lightblue;
+    cursor:pointer;
+}
+
+.quantity span{
+    font-size:20px;
+    margin:0 10px;
+}
+            </style>
+            <style>
+#cartButtonContainer
+{
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+}
+
+.view-cart-btn
+{
+    background-color: green;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+</style>
+            <b>
+                <center>
+                    Dresses
+                </center>
+            </b>
+        </head>
+        <body>
+            <section class="products">
+               <div class="product-card">
+                    <img src="dre.jpeg" width="150" height="250">
+                    <h2>
+                        <b>
+                        stylish kurtha set
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                        $90
+                        </b>
+                    </p>
+                    <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+                    <div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div>
+                <div class="product-card">
+                    <img src="pant.jpeg" width="150" height="250">
+                    <h2>
+                        <b>
+                            Cargo pants
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $13
+                        </b>
+                    </p>
+                    <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div>
+                <div class="product-card">
+                    <img src="black.webp" width="150" height="250">
+                    <h2>
+                        <b>
+                            Anarkali Kurthi
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $15
+                        </b>
+                    </p>
+                                        <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                  <div class="product-card">
+                    <img src="dre1.webp" width="150" height="250">
+                    <h2>
+                        <b>
+                            Umbrella Kurtha
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $14
+                        </b>
+                    </p>
+                    <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                <div class="product-card">
+                    <img src="dre3.avif" width="150" height="250">
+                    <h2>
+                        <b>
+                            Tight Jeans
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $10
+                        </b>
+                    </p>
+                                        <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                <div class="product-card">
+                    <img src="dre4.webp" width="150" height="250">
+                    <h2>
+                        <b>
+                            Bell bottom
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $12
+                        </b>
+                    </p>
+                                        <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                <div class="product-card">
+                    <img src="dre5.jpeg" width="150" height="250">
+                    <h2>
+                        <b>
+                            Fancy Top
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $9
+                        </b>
+                    </p>
+                                        <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                <div class="product-card">
+                    <img src="dre6.webp" width="150" height="250">
+                    <h2>
+                        <b>
+                            Short Top
+                        </b>
+                    </h2>
+                    <p>
+                        <b>
+                            $7
+                        </b>
+                    </p>
+                                       <button class="button"
+        onclick="addToCart(this)">
+    Add to cart
+</button>
+<div class="quantity">
+    <button onclick="decrease(this)">-</button>
+    <span>0</span>
+    <button onclick="increase(this)">+</button>
+</div>
+                </div> 
+                
+                
+                
+                
+                </section>
+                <a href="TRENDORA.html" class="btn">Go back</a>
+                <script>
+function increase(btn)
+{
+    let qty = btn.previousElementSibling;
+
+    qty.innerText =
+    parseInt(qty.innerText) + 1;
+
+    syncCart(btn);
+}
+
+function decrease(btn)
+{
+    let qty = btn.nextElementSibling;
+
+    if(parseInt(qty.innerText) > 0)
+    {
+        qty.innerText =
+        parseInt(qty.innerText) - 1;
+
+        syncCart(btn);
+    }
+}
+function syncCart(btn)
+{
+    let card = btn.closest(".product-card");
+
+    let name =
+    card.querySelector("h2").innerText;
+
+    let price =
+    Number(
+        card.querySelector("p")
+        .innerText.replace("$","")
+    );
+
+    let quantity =
+    parseInt(
+        card.querySelector(".quantity span")
+        .innerText
+    );
+
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    let item =
+    cart.find(p => p.name === name);
+
+    if(item)
+    {
+        if(quantity == 0)
+        {
+            cart =
+            cart.filter(
+                p => p.name !== name
+            );
+        }
+        else
+        {
+            item.quantity = quantity;
+        }
+
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
+        );
+    }
+}
+</script>
+<script>
+function addToCart(button)
+{
+    let card = button.closest(".product-card");
+
+    let name =
+    card.querySelector("h2").innerText;
+
+    let price =
+    card.querySelector("p").innerText
+    .replace("$","")
+    .trim();
+
+    let quantity =
+    parseInt(
+        card.querySelector(".quantity span")
+        .innerText
+    );
+
+    if(quantity <= 0)
+    {
+        alert("Select quantity first");
+        return;
+    }
+
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    let existing =
+cart.find(item => item.name === name);
+
+if(existing)
+{
+    existing.quantity = quantity;
+}
+else
+{
+    cart.push({
+        name: name,
+        price: Number(price),
+        quantity: quantity
+    });
+}
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert("Product Added Successfully");
+}
+localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
+
+document.getElementById(
+    "cartButtonContainer"
+).style.display = "block";
+
+alert("Added to Cart Successfully");
+</script>
+<script>
+window.onload = function()
+{
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    if(cart.length > 0)
+    {
+        document.getElementById(
+            "cartButtonContainer"
+        ).style.display = "block";
+    }
+}
+</script>
+<script>
+
+window.onload = function()
+{
+    let cart =
+    JSON.parse(localStorage.getItem("cart"))
+    || [];
+
+    let cards =
+    document.querySelectorAll(".product-card");
+
+    cards.forEach(card =>
+    {
+        let productName =
+        card.querySelector("h2").innerText;
+
+        let item =
+        cart.find(
+            p => p.name === productName
+        );
+
+        if(item)
+        {
+            card.querySelector(
+                ".quantity span"
+            ).innerText =
+            item.quantity;
+        }
+    });
+}
+
+</script>
+<div id="cartButtonContainer">
+    <a href="cart.html" class="view-cart-btn">
+        View Cart
+    </a>
+</div>
+</body>
+</html>

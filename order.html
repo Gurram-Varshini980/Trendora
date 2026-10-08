@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmation</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#d4fc79,#96e6a1);
+    padding: 40px;
+}
+
+.container{
+    width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align: center;
+    color: green;
+}
+
+.info{
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.total{
+    font-size: 22px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn:hover{
+    background-color: darkblue;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 Order Placed Successfully!</h1>
+
+<p class="info" id="orderId"></p>
+
+<p class="info" id="customerName"></p>
+
+<p class="info" id="mobile"></p>
+
+<p class="info" id="address"></p>
+<p class="info" id="payment"></p>
+
+<p class="info" id="orderDate"></p>
+
+
+
+<p class="info total" id="subtotal"></p>
+
+<p class="info total" id="discount"></p>
+
+<p class="info total" id="finalAmount"></p>
+
+<a href="Trendora.html" class="btn">
+Continue Shopping
+</a>
+
+</div>
+
+<script>
+
+let customer =
+JSON.parse(localStorage.getItem("customer")) || {};
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let orderNumber =
+"ORD" + Math.floor(Math.random() * 100000);
+
+let today =
+new Date();
+
+
+
+let subtotal = 0;
+
+cart.forEach(item =>
+{
+    subtotal +=
+    item.price * item.quantity;
+});
+
+let discount =
+subtotal * 0.20;
+
+let finalAmount =
+subtotal - discount;
+
+document.getElementById("orderId")
+.innerHTML =
+"Order ID : " + orderNumber;
+
+document.getElementById("customerName")
+.innerHTML =
+"Customer Name : " +
+customer.name;
+
+document.getElementById("mobile")
+.innerHTML =
+"Mobile Number : " +
+customer.mobile;
+
+document.getElementById("address")
+.innerHTML =
+"Delivery Address : " +
+customer.address;
+document.getElementById("payment")
+.innerHTML =
+"Payment Method : " +
+customer.paymentMethod;
+
+document.getElementById("orderDate")
+.innerHTML =
+"Order Date : " +
+today.toLocaleDateString();
+
+
+
+document.getElementById("subtotal")
+.innerHTML =
+"Total Before Discount : $" +
+subtotal;
+
+document.getElementById("discount")
+.innerHTML =
+"Discount (20%) : $" +
+discount;
+
+document.getElementById("finalAmount")
+.innerHTML =
+"Final Amount : $" +
+finalAmount;
+
+</script>
+
+</body>
+</html>

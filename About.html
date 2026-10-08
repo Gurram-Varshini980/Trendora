@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendora</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(to right, #f6d365, #fda085);
+            min-height:100vh;
+        }
+
+        header{
+            text-align:center;
+            font-size:40px;
+            font-weight:bold;
+            color:blueviolet;
+            padding:30px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:40px;
+        }
+
+        .card{
+            background:white;
+            border-radius:20px;
+            padding:25px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px) scale(1.03);
+        }
+
+        .card h3{
+            color:blueviolet;
+            margin-bottom:15px;
+        }
+
+        .card p{
+            color:#555;
+            line-height:1.6;
+        }
+
+        .welcome{
+            width:85%;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .welcome h2{
+            color:blueviolet;
+            margin-bottom:15px;
+        }
+
+        .welcome p{
+            line-height:1.8;
+            color:#444;
+            font-size:17px;
+        }
+
+        .btn{
+            position:fixed;
+            top:20px;
+            right:20px;
+            text-decoration:none;
+            background:blueviolet;
+            color:white;
+            padding:12px 20px;
+            border-radius:10px;
+            font-weight:bold;
+        }
+
+        .footer{
+            text-align:center;
+            margin:40px 0;
+            color:#333;
+            font-weight:bold;
+        }
+        img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+    </style>
+</head>
+
+<body>
+
+    <a href="TRENDORA.html" class="btn">Go Back</a>
+
+    <header>✨ Trendora Categories ✨</header>
+
+    <div class="welcome">
+        <h2>Welcome to Trendora</h2>
+
+        <p>
+            Trendora is your one-stop destination for shopping.
+            Explore fashionable dresses, stylish furniture,
+            delicious snacks, and quality utensils—all carefully
+            selected to make your lifestyle better and more enjoyable.
+            We focus on quality, affordability, and customer satisfaction
+            to provide an exceptional shopping experience.
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>👗 Dresses</h3>
+                <p>
+                    Discover trendy outfits, elegant designs,
+                    and comfortable fashion for every occasion.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🛋️ Furniture</h3>
+                <p>
+                    Transform your home with modern, stylish,
+                    and durable furniture collections.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🍿 Snacks</h3>
+                <p>
+                    Enjoy a variety of tasty snacks and treats
+                    perfect for every mood and celebration.
+                </p>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        ⭐ Quality Products | Fast Service | Customer Satisfaction ⭐
+    </div>
+
+</body>
+</html>
